@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Music_Tour
@@ -5,7 +6,7 @@ public class Music_Tour
     private String name;
     private String sname_BOSS;
 
-    public List<Travel> travels = new List<>();
+    public List<Travel> travels = new ArrayList<>();
         
     Music_Tour(String name, String sname_BOSS)
     {
