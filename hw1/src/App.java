@@ -2,18 +2,17 @@ import java.util.logging.Logger;
 
 import com.sun.tools.javac.Main;
 
+import java.util.List;
+
 public class App {
    public static void main(String[] args) throws Exception
     {
-        Music_Tour m = new Music_Tour("Stepan","Giga");
-        Travel t1 = new Travel("Ternopil",1985,5);
+      
+        Travel t1 = new Travel("Ternopil",1985,50);
         Travel t2 = new Travel("Dnipro",1999,10);
-
-        m.travels.add(t1);
-        m.travels.add(t2);
-        for (Travel travel: m.travels) {
-            System.out.println(travel.get_city());
-        }
+        List<Travel> u = List.of(t1,t2);
+        Music_Tour m = new Music_Tour("Stepan","Giga",u);
+        m.getMaxTravel();
        
     
 

@@ -30,14 +30,15 @@ public class Music_Tour
         Travel maxTravel = null;
         for(Travel travel:travels)
         {
+            if(maxTravel == null || travel.get_count_concert() > maxTravel.get_count_concert())
+            {
+                maxTravel = travel;
+            }
 
         }
-    
+        System.out.println("City: "  + maxTravel.get_city() + "\nYear: " + maxTravel.get_year() + "\nCount of tours: " + maxTravel.get_count_concert());
         
-
-    }
-    
-   
+    }   
 }
 
 
