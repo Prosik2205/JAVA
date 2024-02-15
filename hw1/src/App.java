@@ -9,11 +9,13 @@ public class App {
     {
       
         Travel t1 = new Travel("Ternopil",1985,50);
-        Travel t2 = new Travel("Dnipro",1999,10);
-        List<Travel> u = List.of(t1,t2);
+        Travel t2 = new Travel("Dnipro",1725,20);
+        Travel t3 = new Travel("Dnipro",1999,10);
+        List<Travel> u = List.of(t1,t2,t3);
         Music_Tour m = new Music_Tour("Stepan","Giga",u);
-        m.getMaxTravel();
-       
+        // m.getMaxTravel();
+        // m.getTravelByCity("Dnipro");
+        m.getNameBoss();
     
 
         

@@ -1,8 +1,11 @@
+import java.util.List;
+
 public class Travel {
     
    private String city;
    private int year;
    private int count_concert;
+
 
    Travel(String city,int year,int count_concert)
    {
@@ -25,6 +28,5 @@ public class Travel {
     {
         return count_concert;
     }
-    
         
 }
