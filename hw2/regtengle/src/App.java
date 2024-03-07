@@ -4,10 +4,10 @@ public class App {
 
         
         Paralellogram p = new Paralellogram(5, 6, 45);
-        System.out.println(p.getPerimeter());
+        System.out.println("Perimeter paralelogram: "+p.getPerimeter());
 
      
-        Trapezium t = new Trapezium(2, 3, 2);
-        System.out.println(t.getPerimeter());
+        Trapezium t = new Trapezium(8, 10, 30);
+        System.out.println("Perimeter trapezium: "+t.getPerimeter());
     }
 }
