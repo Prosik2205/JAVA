@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
+        // var p =(Perimetr) new Paralellogram(5, 6, 45);
         
         Paralellogram p = new Paralellogram(5, 6, 45);
         System.out.println("Perimeter paralelogram: "+p.getPerimeter());
