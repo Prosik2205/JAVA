@@ -220,7 +220,7 @@ public class CrazyLambdas {
      * @return a comparator instance
      */
     public static <T, U extends Comparable<? super U>> Comparator<T> comparing(Function<? super T, ? extends U> mapper) {
-        throw new ExerciseNotCompletedException();
+        return (o1, o2) -> mapper.apply(o1).compareTo(mapper.apply(o2));
     }
 
     /**
@@ -240,7 +240,15 @@ public class CrazyLambdas {
      */
     public static <T, U extends Comparable<? super U>> Comparator<T> thenComparing(
             Comparator<? super T> comparator, Function<? super T, ? extends U> mapper) {
-        throw new ExerciseNotCompletedException();
+        return (o1, o2) -> {
+            int cmp = comparator.compare(o1, o2);
+            if (cmp == 0) {
+                U v1 = mapper.apply(o1);
+                U v2 = mapper.apply(o2);
+                cmp = v1.compareTo(v2);
+            }
+            return cmp;
+        };
     }
 
     /**
@@ -249,7 +257,7 @@ public class CrazyLambdas {
      * @return a supplier instance
      */
     public static Supplier<Supplier<Supplier<String>>> trickyWellDoneSupplier() {
-        throw new ExerciseNotCompletedException();
+        return () -> () -> () -> "WELL DONE!";
     }
 }
 
