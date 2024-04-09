@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 import java.time.Month;
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * {@link CrazyStreams} is an exercise class. Each method represent some operation with a collection of accounts that
@@ -30,7 +32,8 @@ public class CrazyStreams {
      * @return account with max balance wrapped with optional
      */
     public Optional<Account> findRichestPerson() {
-        throw new ExerciseNotCompletedException();
+        return accounts.stream()
+        .max(Comparator.comparing(Account::getBalance));
     }
 
     /**
@@ -40,7 +43,9 @@ public class CrazyStreams {
      * @return a list of accounts
      */
     public List<Account> findAccountsByBirthdayMonth(Month birthdayMonth) {
-        throw new ExerciseNotCompletedException();
+        return accounts.stream()
+        .filter(a->a.getBirthday().getMonth().equals(birthdayMonth))
+        .collect(Collectors.toList());
     }
 
     /**
@@ -50,7 +55,8 @@ public class CrazyStreams {
      * @return a map where key is true or false, and value is list of male, and female accounts
      */
     public Map<Boolean, List<Account>> partitionMaleAccounts() {
-        throw new ExerciseNotCompletedException();
+        return accounts.stream()
+        .collect(partitioningBy(a -> a.getSex().equals(Sex.MALE)));
     }
 
     /**
