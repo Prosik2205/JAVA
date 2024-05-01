@@ -36,7 +36,7 @@ public class App {
         }
     }
     public static void main(String[] args) throws Exception {
-        App cs = new App();
+        Main cs = new Main();
         int a[] = {5, 1, 4, 2, 8, 0, 2, 5, 8, 1, 5};
         cs.cocktailSort(a);
         System.out.println("Sorted array:");
