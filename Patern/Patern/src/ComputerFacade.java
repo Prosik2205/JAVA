@@ -1,18 +1,12 @@
-class ComputerFacade {
-    private CPU processor;
-    private Memory ram;
-    private HardDrive hd;
-
+public class ComputerFacade implements Detail {
+    private final Map<Type, Details> implementations;
+    
     public ComputerFacade() {
-        this.processor = new CPU();
-        this.ram = new Memory();
-        this.hd = new HardDrive();
+        implementations = new EnumeratedMap<Type>();
+        implementations.add(Type.CPU, new CPU())
     }
-
-    public void start() {
-        processor.freeze();
-        ram.load(0, hd.read(0, 64));
-        processor.jump(0);
-        processor.execute();
+    
+    public void start(Type type) {
+        implementations.get(type).start();
     }
 }
